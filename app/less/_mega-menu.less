@@ -3,7 +3,6 @@
 
 .mega-menu{
     border-bottom: 1px solid @border-color-2;
-
     &__cotainer-first-lvl {
         display: flex;
         flex-direction: row;
@@ -12,7 +11,6 @@
         width: 90%;
         margin: 0 auto;
     }
-    
     &__item-first-lvl {
         height: 45px;
         margin: auto 20px;
@@ -24,7 +22,6 @@
             z-index: 1;
         }
     }
-
     &__link-first{
         display: flex;
         align-items: center;
@@ -36,7 +33,6 @@
         border-bottom: 3px solid transparent;
         box-sizing: border-box;
         transition: border .2s;    
-
         &:hover, &_active {
             border-bottom: 3px solid @brand-amway-red;
         }
@@ -78,8 +74,6 @@
             display: flex;
             z-index: 1;
         }
-
-
     }
     &__link-second{
         color: @brand-darkest;
@@ -101,17 +95,14 @@
         justify-content: flex-start;
         margin: 0 auto;
         position: absolute;
-        min-width: 150px;
-        // max-width: 200px;
+        min-width: 250px;
         left: 0;
         top: 100%;
         background-color: @brand-light;
         border: 1px solid @border-color-2;
         border-radius: 0 0 3px 3px;
         box-shadow: 2px 2px 5px @border-color-2;
-
     }
-    
     &__item-third-lvl {
         min-height: 45px;
         line-height: 22px;
@@ -120,7 +111,6 @@
         flex-direction: row;
         align-items: stretch;
     }
-    
     &__link-third{
         display: flex;
         align-items: center;
@@ -134,10 +124,39 @@
             text-decoration: underline;
         }
     }
-}
 
-.mega-menu__item-first-lvl.mega-menu__item-first-lvl_current > .mega-menu__cotainer-second-lvl{
-    display: flex;
+    // with svg
+
+    &__link-second_with-svg{
+        flex-direction: column;
+    }
+    &__cotainer-second-lvl_svg{
+        height: 100px;
+        justify-content: space-between;
+    }
+    &__item-second-lvl_with-svg{
+        height: 100px;
+        margin: 0;
+        align-items: center;
+        border-left: 1px solid @border-color-2;
+        border-right: 1px solid white;
+        flex-grow: 1;
+        justify-content: center;
+        &:hover{
+            border-right: 1px solid transparent;
+            background-color: @brand-light;
+        }
+    }
+    &__item-second-lvl_with-svg:last-of-type{
+        border-right: 1px solid @border-color-2;
+    }
+    &__item-second-lvl_with-svg:last-of-type > .mega-menu__cotainer-third-lvl{
+        left: auto;
+        right: 0;
+    }
+    &__item-first-lvl.mega-menu__item-first-lvl_current > .mega-menu__cotainer-second-lvl{
+        display: flex;
+    }
 }
 
 // svg
@@ -146,28 +165,3 @@
     width: 30px;
     fill: @brand-darkest;
 }
-.mega-menu__link-second_with-svg{
-    flex-direction: column;
-}
-.mega-menu__cotainer-second-lvl_svg{
-    height: 100px;
-    justify-content: space-between;
-}
-.mega-menu__item-second-lvl_with-svg{
-    height: 100px;
-    margin: 0;
-    align-items: center;
-    border-left: 1px solid @border-color-2;
-    border-right: 1px solid white;
-    flex-grow: 1;
-    justify-content: center;
-    &:hover{
-        border-right: 1px solid white;
-        background-color: @brand-light;
-    }
-}
-.mega-menu__item-second-lvl_with-svg:last-of-type{
-    box-shadow: 0px 0px 0px 1px @border-color-2;
-    border-right: 1px solid @border-color-3;
-}
-
