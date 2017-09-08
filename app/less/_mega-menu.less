@@ -3,94 +3,139 @@
 
 .mega-menu{
     border-bottom: 1px solid @border-color-2;
-}
-.mega-menu__cotainer-first-lvl{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: 0 auto;
-}
-.mega-menu__item-first-lvl{
-    height: 45px;
-    margin: auto 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-}
-.mega-menu__link-first{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: @brand-amway-blue;
-    font-family: @RobotoBold;
-    font-size: 1em;
-    text-transform: uppercase;
-    border-bottom: 3px solid transparent;
-    box-sizing: border-box;
-    transition: border .2s;    
-    top: 2px;
-}
-.mega-menu__link-first:hover,
-.mega-menu__link-first_active{
-    border-bottom: 3px solid @brand-amway-red;
-}
-.mega-menu__item-first-lvl:hover > .mega-menu__cotainer-second-lvl{
-    display: flex;
-    z-index: 1;
-}
-.mega-menu__item-shop{
-    height: 45px;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    box-sizing: border-box;
-    border-right: 1px solid @border-color-2;
-    border-left: 1px solid @border-color-2;
-}
-.mega-menu__item-shop .mega-menu__link-first{
-    padding: 0 30px;
+
+    &__cotainer-first-lvl {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    &__item-first-lvl {
+        height: 45px;
+        margin: auto 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        &:hover > .mega-menu__cotainer-second-lvl {
+            display: flex;
+            z-index: 1;
+        }
+    }
+
+    &__link-first{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: @brand-amway-blue;
+        font-family: @RobotoBold;
+        font-size: 1em;
+        text-transform: uppercase;
+        border-bottom: 3px solid transparent;
+        box-sizing: border-box;
+        transition: border .2s;    
+
+        &:hover, &_active {
+            border-bottom: 3px solid @brand-amway-red;
+        }
+    }
+    &__item-shop{
+        height: 45px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        box-sizing: border-box;
+        border-right: 1px solid @border-color-2;
+        border-left: 1px solid @border-color-2;
+    }
+    &__item-shop .mega-menu__link-first{
+        padding: 0 30px;
+    }
+
+    // second lvl
+    
+    &__cotainer-second-lvl{
+        background-color: @brand-lightest;
+        display: none;
+        position: absolute;
+        left: 0;
+        height: 45px;
+        top: 46px;
+        width: 100vw;
+        padding: 0px 5%;
+        box-shadow: 0 1px 6px @brand-med-light;
+    }
+    &__item-second-lvl{
+        position: relative;
+        height: 45px;
+        margin: auto 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        &:hover > .mega-menu__cotainer-third-lvl {
+            display: flex;
+            z-index: 1;
+        }
+
+
+    }
+    &__link-second{
+        color: @brand-darkest;
+        font-size: .9em;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        box-sizing: border-box;
+        &_active{
+            font-weight: bold;
+        }
+    }
+
+    // third
+    
+    &__cotainer-third-lvl {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0 auto;
+        position: absolute;
+        min-width: 150px;
+        // max-width: 200px;
+        left: 0;
+        top: 100%;
+        background-color: @brand-light;
+        border: 1px solid @border-color-2;
+        border-radius: 0 0 3px 3px;
+        box-shadow: 2px 2px 5px @border-color-2;
+
+    }
+    
+    &__item-third-lvl {
+        min-height: 45px;
+        line-height: 22px;
+        margin: auto 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+    
+    &__link-third{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: @brand-darkest;
+        font-family: @RobotoRegular;
+        font-size: .9em;
+        box-sizing: border-box;
+        width: 100%;
+        &:hover, &_active {
+            text-decoration: underline;
+        }
+    }
 }
 
-// second lvl
-
-.mega-menu__cotainer-second-lvl{
-    background-color: @brand-lightest;
-    display: none;
-    position: absolute;
-    left: 0;
-    height: 45px;
-    top: 46px;
-    width: 100vw;
-    padding: 0px 5%;
-    box-shadow: 0 1px 6px @brand-med-light;
-}
-.mega-menu__item-second-lvl{
-    height: 45px;
-    margin: auto 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-}
-.mega-menu__link-second{
-    color: @brand-darkest;
-    font-size: .9em;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    // color: @brand-amway-blue;
-    // font-family: @RobotoBold;
-    // font-size: 1em;
-    // text-transform: uppercase;
-    // border-bottom: 3px solid transparent;
-    box-sizing: border-box;
-    // transition: border .2s;    
-    // top: 2px;
-}
-// .mega-menu__link-second_with-svg{
-
-// }
 .mega-menu__item-first-lvl.mega-menu__item-first-lvl_current > .mega-menu__cotainer-second-lvl{
     display: flex;
 }
@@ -98,7 +143,7 @@
 // svg
 
 .svg{
-    height: 30px;
+    width: 30px;
     fill: @brand-darkest;
 }
 .mega-menu__link-second_with-svg{
@@ -114,14 +159,15 @@
     align-items: center;
     border-left: 1px solid @border-color-2;
     border-right: 1px solid white;
-    // box-shadow: 0px 0px 0px 1px @border-color-2;
     flex-grow: 1;
     justify-content: center;
+    &:hover{
+        border-right: 1px solid white;
+        background-color: @brand-light;
+    }
 }
 .mega-menu__item-second-lvl_with-svg:last-of-type{
     box-shadow: 0px 0px 0px 1px @border-color-2;
-    border-left: 1px solid white;
+    border-right: 1px solid @border-color-3;
 }
-// .mega-menu__item-second-lvl_with-svg:first-of-type{
-//     border-left: 1px solid @border-color-2;
-// }
+
