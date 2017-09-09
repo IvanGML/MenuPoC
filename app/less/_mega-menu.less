@@ -66,10 +66,14 @@
     &__item-second-lvl{
         position: relative;
         height: 45px;
-        margin: auto 20px;
+        margin: 0;
+        padding: 0px 20px;
         display: flex;
         flex-direction: row;
         align-items: stretch;
+        &:hover{
+            background-color: @brand-light;
+        }
         &:hover > .mega-menu__cotainer-third-lvl {
             display: flex;
             z-index: 1;
@@ -90,6 +94,7 @@
     // third
     
     &__cotainer-third-lvl {
+        position: relative;
         display: none;
         flex-direction: column;
         justify-content: flex-start;
@@ -106,10 +111,22 @@
     &__item-third-lvl {
         min-height: 45px;
         line-height: 22px;
-        margin: auto 20px;
+        margin: 0;
+        padding: 0px 0px 0px 20px;
         display: flex;
         flex-direction: row;
         align-items: stretch;
+        &:hover .mega-menu__cotainer-fourth-lvl{
+            display: flex;
+        }
+        &_have-child{
+            &:hover{
+                background-color: #fff;
+            }
+            &:hover .mega-menu__link-third::after{
+                display: block;
+            }
+        }
     }
     &__link-third{
         display: flex;
@@ -120,8 +137,20 @@
         font-size: .9em;
         box-sizing: border-box;
         width: 100%;
+        position: relative;
         &:hover, &_active {
             text-decoration: underline;
+        }
+        &::after{
+            top: 0;
+            left: 99%;
+            position: absolute;
+            content: "";
+            display: none;
+            width: 5px;
+            background-color: white;
+            height: 45px;
+            z-index: 2;
         }
     }
 
@@ -156,6 +185,44 @@
     }
     &__item-first-lvl.mega-menu__item-first-lvl_current > .mega-menu__cotainer-second-lvl{
         display: flex;
+    }
+
+    // fourth lvl
+    
+    &__cotainer-fourth-lvl {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0 auto;
+        position: absolute;
+        min-width: 250px;
+        left: 100%;
+        top: -1px;
+        background-color: white;
+        border: 1px solid @border-color-2;
+        border-radius: 0 0 3px 3px;
+        box-shadow: 2px 2px 5px @border-color-2;
+    }
+    &__item-fourth-lvl {
+        min-height: 45px;
+        line-height: 22px;
+        margin: auto 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+    &__link-fourth{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: @brand-darkest;
+        font-family: @RobotoRegular;
+        font-size: .9em;
+        box-sizing: border-box;
+        width: 100%;
+        &:hover, &_active {
+            text-decoration: underline;
+        }
     }
 }
 
